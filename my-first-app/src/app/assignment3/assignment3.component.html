@@ -3,6 +3,7 @@
 <!-- <p [ngStyle]="{ visibility: !isSecretIsVisible ? 'hidden' : 'visible'}">Secret Password = 'tuna'</p> -->
 <p *ngIf="isSecretIsVisible">Secret Password = 'tuna'</p>
 <ul>
-  <li *ngFor="let item of logs" [ngStyle]="{ backgroundColor: item.clickId >= 5 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': item.clickId >= 5 }">{{item.timestamp}}::{{item.clickId}}
+  <li *ngFor="let item of logs; let i = index" [ngStyle]="{ backgroundColor: item.clickId >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 5 }">{{item.timestamp}}::{{item.clickId}}
     - {{item.status}}</li>
 </ul>
