@@ -1,0 +1,8 @@
+<p>assignment3 works!</p>
+<button class="btn btn-primary" (click)="onLogMe()">Display Details</button>
+<!-- <p [ngStyle]="{ visibility: !isSecretIsVisible ? 'hidden' : 'visible'}">Secret Password = 'tuna'</p> -->
+<p *ngIf="isSecretIsVisible">Secret Password = 'tuna'</p>
+<ul>
+  <li *ngFor="let item of logs" [ngStyle]="{ backgroundColor: item.clickId >= 5 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': item.clickId >= 5 }">{{item.timestamp}}::{{item.clickId}}
+    - {{item.status}}</li>
+</ul>
